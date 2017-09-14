@@ -1,11 +1,13 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ListadoComponent } from './listado.component';
+import { Work } from "../../models/work/work";
 
 describe('ListadoComponent', () => {
   let component: ListadoComponent;
   let fixture: ComponentFixture<ListadoComponent>;
-
+  var works: Work[] = new Array<Work>();
+  
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ ListadoComponent ]
@@ -24,7 +26,8 @@ describe('ListadoComponent', () => {
   });
   
   it("should be show a list of a last 10 items", () => {
-
+      var total = works.length;
+      expect(total).toBe(10);    
   })
 
   it("should be show a title, description and status (Done, in process, Todo)", ()=>{
